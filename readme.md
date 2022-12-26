@@ -1,11 +1,27 @@
-## Commands STEP1
+## Calculate One-Holes in GTS file.
 ```bash
-pip install foobar
+g++ pe.cpp Matrix.cpp
+./a.out ./dist/FileName.gts
 ```
 
+## Correct the orientation of the GTS file.
+```bash
+g++ orient_simplex_v2.cpp -std=c++11
+./a.out
+"Enter file path"
+```
 
-Critical-Point-Visualization
+## Run Jupyter Notebook
+To install dependencies:
+<!-- numpy,sympy -->
+```bash
+pip install numpy
+pip install sympy
+```
+
+## Visualization
 Setup, Run, Compile & Deploy Steps :
-npm install it will install all your dependencies
-
-npm run dev it will start the development environment
+```bash
+npm install #it will install all your dependencies
+npm run dev #it will start the development environment
+```

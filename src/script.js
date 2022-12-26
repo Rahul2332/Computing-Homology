@@ -7,7 +7,7 @@ import { NumberKeyframeTrack } from "three";
 
 var arr = [];
 // horse seashell bunny cube sphere5 sphere20 Tangle Torus space_station x_wing helix2 RzTorus
-var fileName = "head_red.gts"
+var fileName = "torus3.gts"
 
 function readTextFile() {
     var rawFile = new XMLHttpRequest();

@@ -1,31 +1,9 @@
-//now i am considering the fact that there can be only one face connected to an edge
-
 #include <bits/stdc++.h>
 #include <fstream>
 using namespace std;
 
-#define check cout<<"check"<<endl;
-#define print_vertex_storage cout<<"Vertices"<<endl; \
-    for(int i=1;i<features[0]+1;i++) \
-        cout<<vertices[i].x<<" "<<vertices[i].y<<" "<<vertices[i].z<<endl; \
-    cout<<endl;
-
-#define print_edges_storage cout<<"Edges"<<endl; \
-    for(int i=1;i<features[1]+1;i++) \
-        cout<<edges[i].start<<"-"<<edges[i].end<<"  f1:"<<edges[i].faces[0]<<","<<edges[i].faces[1]<<endl; \
-    cout<<endl;
-
-#define print_faces_storage cout<<"Faces"<<endl; \
-    for(int i=1;i<features[2]+1;i++) \
-    { \
-        for(int j=0;j<3;j++) \
-            cout<<"("<<faces[i].edge[j].second<<")"<<faces[i].edge[j].first<< " "; \
-        cout<<endl<<"Visited: "<<faces[i].visited<<endl; \
-        cout<<"Chain: "<<faces[i].chain[0]<<" "<<faces[i].chain[1]<<endl; \
-    } 
-
 vector<int> features;
-// vector<string> vertices;
+
 struct Vertices{
     string coordinates;
     int edge;
@@ -60,43 +38,15 @@ vector<int> line_to_int(string buffer)
     }
     vec.push_back(stoi(trash));
     trash.clear();
-    // for (int i = 0; i < vec.size(); i++)
-    //     cout << vec[i] << endl;
     return vec;
 }
-
-vector<float> line_to_float(string buffer)
-{
-    string trash;
-    vector<float> vec;
-    for (int i = 0; i < buffer.size(); i++)
-    {
-        if (buffer[i] == ' ')
-        {
-            vec.push_back(stod(trash));
-            trash.clear();
-        }
-        else
-            trash += buffer[i];
-    }
-    vec.push_back(stof(trash));
-    trash.clear();
-    // for (int i = 0; i < vec.size(); i++)
-    //     cout << vec[i] << endl;
-    return vec;
-}
-
-
 
 int main()
 {
     ifstream infile;
     string filename,out_filename;
     cin >> filename;
-    // filename = "monkey_rj.gts";
-    // out_filename = filename.substr(0,filename.size()-4) + "_oriented.gts";
     infile.open(filename);
-    // ofstream outfile(out_filename);
 
     if (!infile)
     {
@@ -132,9 +82,6 @@ int main()
         buffer.clear();
         getline(infile, buffer);
         vector<int> temp = line_to_int(buffer);
-        // faces[i].edge1.first = temp[0];
-        // faces[i].edge2.first = temp[1];
-        // faces[i].edge3.first = temp[2];
         for (int j = 0; j < 3; j++)
         {
             faces[i].edge[j].first = temp[j];
@@ -146,13 +93,15 @@ int main()
     }
     // Scanned for vertices edges and faces,
     // now lets correct their orientation
-    // check;
     // we defined an orientation for our simplicial complex
     infile.close();
     //Taking all the different connected components vertices and defining their orientation
     infile.open("holes0_buffer.txt");
     buffer.clear();
     getline(infile,buffer);
+    if(buffer[buffer.size()-1] == ' ')
+        buffer.erase(buffer.begin() + buffer.size()-1);
+    cout<<buffer<<endl;
     vector<int> temp = line_to_int(buffer);
 
     stack<int> pile; // stack to keep track of visited faces during traversal
@@ -163,15 +112,6 @@ int main()
         faces[edges[vertices[temp[i]].edge].faces[0]].chain[1] = edges[vertices[temp[i]].edge].end;
         pile.push(edges[vertices[temp[i]].edge].faces[0]);
     }
-
-    // faces[1].chain[0] = edges[faces[1].edge[0].first].start;
-    // faces[1].chain[1] = edges[faces[1].edge[0].first].end;
-
-
-    
-    // pile.push(1);
-
-    // check;
 
     while (!pile.empty())
     {

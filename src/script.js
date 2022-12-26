@@ -344,8 +344,8 @@ function init() {
 
     parentTransform = new THREE.Object3D();
 
-    const points_1 = [21, 24, 26, 27, 28, 25, 23, 22, 21]
-    const points_2 = [102, 105, 106, 107, 104, 103, 102]
+    const points_1 = [2,1,3,2]
+    const points_2 = [2,1,7,5,3,2]
 
     const line_points_1 = []
     const line_points_2 = []

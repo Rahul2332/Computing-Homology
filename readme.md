@@ -20,8 +20,14 @@ pip install sympy
 ```
 
 ## Visualization
-Setup, Run, Compile & Deploy Steps :
+Setup :
 ```bash
 npm install #it will install all your dependencies
+```
+
+
+Run, Compile & Deploy Step :
+- Change var **filename** in index.html
+```bash
 npm run dev #it will start the development environment
 ```

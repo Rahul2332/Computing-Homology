@@ -22,7 +22,7 @@ example:
 
 *Shell script contains all the program execution commands, just give executable permission to script and run.*
 
-**If user wants to run each file seperately, following are the commands for it:**
+<!-- **If user wants to run each file seperately, following are the commands for it:**
 
 - Calculate 0-holes
 ```bash
@@ -44,4 +44,4 @@ python3 hole_computation.py "$filename.gts"
 - Visualization Setup :
 ```bash
 npm run dev #it will start the development environment
-```
+``` -->

@@ -58,7 +58,7 @@ class Solver:
             temp_ker_del1 = temp_ker_del1.col_insert(i+1,ker_del1[i+1])
         ker_del1 = temp_ker_del1
         self.ker_del1 = ker_del1
-
+        print()
         print("Expected Beti1: ",len_ker_del1 - len_img_del2)
 
         joint = img_del2.row_join(ker_del1)
@@ -106,7 +106,7 @@ start = time.time()
 
 # file_name = input("Enter the filename for reading the data")
 file_name = "oriented_buffer.gts"
-print("Filename: ",file_name,"\n")
+# print("Filename: ",file_name,"\n")
 holes1 = Solver()
 holes1.read_file(file_name)
 holes1.create_del2()
@@ -141,7 +141,6 @@ for i in range(len(chain_beg)):
         else:
             f.write(str(lizt[k]+1) + ',')
         print(str(lizt[k]+1), end= ', ')
-    print('\n')
     if(i == len(chain_beg)-1):
         f.write(']')
     else:
@@ -156,5 +155,7 @@ f.write("export function name_of_file() {\n")
 f.write("   return " + "\"" + str(name_file) + "\"" + "\n}")
 
 f.close()
+
+print("- One-Hole Computation Completed")
 
         

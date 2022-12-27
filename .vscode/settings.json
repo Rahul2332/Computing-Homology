@@ -1,5 +1,5 @@
 {
-    "workbench.colorTheme": "Default Dark+",
+    "workbench.colorTheme": "Jupyter Theme Dark",
     "files.associations": {
         "*.cpp": "cpp",
         "string": "cpp",

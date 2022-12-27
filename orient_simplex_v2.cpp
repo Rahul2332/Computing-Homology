@@ -107,7 +107,7 @@ int main(int argc, char **argv)
     getline(infile,buffer);
     if(buffer[buffer.size()-1] == ' ')
         buffer.erase(buffer.begin() + buffer.size()-1);
-    cout<<buffer<<endl;
+    // cout<<buffer<<endl;
     vector<int> temp = line_to_int(buffer);
 
     stack<int> pile; // stack to keep track of visited faces during traversal
@@ -213,4 +213,5 @@ int main(int argc, char **argv)
         }
         
     }
+    cout<<endl<<"- Orientation corrected of GTS file"<<endl;
 }

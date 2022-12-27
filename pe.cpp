@@ -108,8 +108,9 @@ int main(int argc, char **argv)
     }
 
     auto end = std::chrono::high_resolution_clock::now();
+    cout<<endl<<"- Computation of 0-cycles completed"<<endl;
 
-    std::cout << "Time Taken is = " << std::chrono::duration_cast<std::chrono::seconds>(end - start).count() << std::endl;
+    // std::cout << "Time Taken is = " << std::chrono::duration_cast<std::chrono::seconds>(end - start).count() << std::endl;
 }
 
 struct boundary_matrix make_boundary(std::vector<std::array<int, 2> > edges, int num_ver)

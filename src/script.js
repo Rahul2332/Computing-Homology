@@ -231,7 +231,7 @@ var triangulateKFacesWithShapes = (function() {
         // });
         var material = new THREE.MeshNormalMaterial({
             // color: new THREE.Color(0x0095DD),
-            opacity: 0.4,
+            opacity: 0.5,
             transparent: true,
             side: THREE.DoubleSide
         });

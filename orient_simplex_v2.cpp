@@ -41,11 +41,17 @@ vector<int> line_to_int(string buffer)
     return vec;
 }
 
-int main()
+int main(int argc, char **argv)
 {
+    //take filename as argument and open
+    if (argc != 2)
+    {
+        std::cout << "Need file name" << std::endl;
+        exit(1);
+    }
     ifstream infile;
     string filename,out_filename;
-    cin >> filename;
+    filename = argv[1];
     infile.open(filename);
 
     if (!infile)

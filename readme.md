@@ -1,4 +1,4 @@
-## Calculate One-Holes in GTS file.
+## Calculate 0-Holes in GTS file.
 ```bash
 g++ pe.cpp Matrix.cpp
 ./a.out ./dist/FileName.gts

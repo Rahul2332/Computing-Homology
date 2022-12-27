@@ -3,11 +3,13 @@ import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import * as dat from "dat.gui";
 import { NumberKeyframeTrack } from "three";
+import { hello,name_of_file } from "../one_holes_vertices";
 // const gui = new dat.GUI()
 
 var arr = [];
+var ln_points = hello();
 // horse seashell bunny cube sphere5 sphere20 Tangle Torus space_station x_wing helix2 RzTorus
-var fileName = "torus3.gts"
+var fileName = name_of_file();
 
 function readTextFile() {
     var rawFile = new XMLHttpRequest();
@@ -344,19 +346,37 @@ function init() {
 
     parentTransform = new THREE.Object3D();
 
-    const points_1 = [2,1,3,2]
-    const points_2 = [2,1,7,5,3,2]
-
-    const line_points_1 = []
-    const line_points_2 = []
-    for (let i=0;i<points_1.length;i++){
-        line_points_1.push(vertices[points_1[i]]);
+    const line_points = []
+    console.log("ln_points:",ln_points)
+    for (let pt=0;pt<ln_points.length;pt++){
+        const a_line_point = []
+        for(let i =0;i<ln_points[pt].length;i++)
+        {
+            // console.log("ln_points",ln_points[pt][i])
+            a_line_point.push(vertices[ln_points[pt][i]]);
+            console.log("a_line_point:",a_line_point)
+        }
+        // console.log("a_line_point:",a_line_point)
+        line_points.push(a_line_point)
     }
-    for (let i=0;i<points_2.length;i++){
-        line_points_2.push(vertices[points_2[i]]);
-    }
+    console.log("line_points:",line_points)
 
-    const line_points = [line_points_1, line_points_2]
+
+    // const points_1 = [2, 1, 3, 2]
+    // const points_2 = [2, 1, 7, 5, 3, 2]
+
+    // const line_points_1 = []
+    // const line_points_2 = []
+    // for (let i=0;i<points_1.length;i++){
+    //     line_points_1.push(vertices[points_1[i]]);
+    // }
+    // for (let i=0;i<points_2.length;i++){
+    //     line_points_2.push(vertices[points_2[i]]);
+    // }
+    // console.log("Points",points_1,points_2)
+    // console.log("Line Points",line_points_1,line_points_2)
+
+    // const line_points = [line_points_1, line_points_2]
 
     
 

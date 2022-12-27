@@ -361,26 +361,19 @@ function init() {
     }
     console.log("line_points:",line_points)
 
+    // FOR RENDERING SINGLE ONE_CYCLE
 
-    // const points_1 = [2, 1, 3, 2]
-    // const points_2 = [2, 1, 7, 5, 3, 2]
+    // let object;
+    // let line_material = new THREE.LineBasicMaterial( { 
+    //     color: 0xffffff,
+    //     linewidth: 1000,
+    // } );
+    // let line_geometry = new THREE.BufferGeometry().setFromPoints( line_points[2] );
+    // let line = new THREE.Line( line_geometry, line_material );
+    // parentTransform.add(line)
 
-    // const line_points_1 = []
-    // const line_points_2 = []
-    // for (let i=0;i<points_1.length;i++){
-    //     line_points_1.push(vertices[points_1[i]]);
-    // }
-    // for (let i=0;i<points_2.length;i++){
-    //     line_points_2.push(vertices[points_2[i]]);
-    // }
-    // console.log("Points",points_1,points_2)
-    // console.log("Line Points",line_points_1,line_points_2)
-
-    // const line_points = [line_points_1, line_points_2]
-
-    
-
-    for(let i=0;i<2;i++)
+    //FOR RENDERING ALL ONE_CYCLES
+    for(let i=0;i<ln_points.length;i++)
     {
         let object;
         let line_material = new THREE.LineBasicMaterial( { 

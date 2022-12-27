@@ -368,7 +368,7 @@ function init() {
     //     color: 0xffffff,
     //     linewidth: 1000,
     // } );
-    // let line_geometry = new THREE.BufferGeometry().setFromPoints( line_points[2] );
+    // let line_geometry = new THREE.BufferGeometry().setFromPoints( line_points[0] );
     // let line = new THREE.Line( line_geometry, line_material );
     // parentTransform.add(line)
 
@@ -416,7 +416,7 @@ function animate(time) {
     // const intersects = raycaster.intersectObject(parentTransform)
 
 	if(intersects.length> 0){
-		intersects[0].object.material.color.setHex( Math.random()* 0xffffff);
+		intersects[0].object.material.color.setHex( 0xffffff);
         console.log('intersects')
         console.log(intersects);
 	}

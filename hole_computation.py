@@ -145,6 +145,7 @@ for i in range(len(chain_beg)):
         f.write(']')
     else:
         f.write('],')
+    print()
 f.write(']\n')
 f.write("   return viz_points\n}\n")
 
